@@ -20,7 +20,7 @@ header {
     display: grid;
     grid-template-areas: 
       "website bell main-image name";
-    grid-template-columns: 40% 10% 15% 1fr;
+    grid-template-columns: 40% 10% 10% 1fr;
     background-color: #7477BF;
     color: white;
 }
@@ -35,10 +35,11 @@ header h1 {
     border-right: 1px solid #999999;
     grid-area: bell;
     padding: 20px 0 0 10px;
+    align-items: center;
 }
 
 .bell svg {
-    width: 80%;
+    width: 20px;
     fill: white;
     margin: auto;
   }
@@ -481,17 +482,12 @@ strong {
 
     header {
       width: 100%;
-      grid-template-columns: 68% 8% 8% 1fr;
+      grid-template-columns: 70% 5% 8% 1fr;
     }
 
     .bell {
-      padding: 15px 0 0 10px;
+      padding: 20px 0 0 10px;
     }
-
-    .bell svg {
-      width: 55%;
-    }
-
 
     header h1 {
       margin-right: 350px;
