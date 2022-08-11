@@ -17,44 +17,45 @@
 
 header {
     grid-area: header;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
+    display: grid;
+    grid-template-areas: 
+      "website bell main-image name";
+    grid-template-columns: 40% 10% 15% 1fr;
     background-color: #7477BF;
     color: white;
-    padding: 10px 0 10px 0;
 }
 
 header h1 {
     font-size: 1.5em;
-    padding: 0px 10px 0px 10px;
+    grid-area: website;
+    margin-left: 5px;
 }
 
 .bell {
-    height: 80%;
-    padding: 0 15px 0 15px;
     border-right: 1px solid #999999;
+    grid-area: bell;
+    padding: 20px 0 0 10px;
 }
 
 .bell svg {
-    padding-top: 10px;
-    width: 30px;
-    display: flex;
+    width: 80%;
     fill: white;
+    margin: auto;
   }
 
 header img {
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  margin: auto 0;
-  border-left: 1px solid #999999;
+  grid-area: main-image;
+  padding: 10px 0 0 10px;
 }
 
 header h3 {
     font-size: 1em;
-    padding-right: 10px;
+    grid-area: name;
+    padding-top: 5px;
+    margin: auto;
 }
 
 /* Navigation */
@@ -84,6 +85,7 @@ main {
 
 .tab {
     display: flex;
+    grid-area: tab;
 }
 
 .headline {
@@ -94,7 +96,6 @@ main {
 .tab h2 {
     background: white;
     margin-right: 15px;
-    flex-basis: 20%;
     margin-top: 10px;
 }
   
@@ -103,9 +104,14 @@ main {
     border-bottom: 1px solid #999999;
     border-left: 1px solid #999999;
     flex-grow: 1;
+    flex-basis: 80%;
 }
 
 /* Alert Box */
+
+.alert {
+  grid-area: alert;
+}
 
 .alert-banner { 
     display: flex;
@@ -125,11 +131,16 @@ main {
     padding-right: 20px;
 }
 
+.alert-banner p {
+  margin-left: 10px;
+}
+
 /* Traffic */
 
 .traffic {
     margin: auto;
     border-bottom: 1px solid #999999;
+    grid-area: traffic;
 }
 
 .traffic-nav {
@@ -156,6 +167,7 @@ main {
 .daily {
     margin: auto;
     border-bottom: 1px solid #999999;
+    grid-area: daily;
 }
 
 .daily h3 {
@@ -172,6 +184,7 @@ main {
 .mobile {
     margin: auto;
     border-bottom: 1px solid #999999;
+    grid-area: mobile;
 }
 
 .mobile h3 {
@@ -188,6 +201,7 @@ main {
 .social-stats {
     margin: auto;
     border-bottom: 1px solid #999999;
+    grid-area: socials;
 }
 
 .social-container {
@@ -242,6 +256,14 @@ main {
 }
 
 /* New Members and Recent Activity */
+.members {
+  grid-area: members;
+}
+
+.activity {
+  grid-area: activity;
+}
+
 .members,
 .activity {
     margin: auto;
@@ -252,6 +274,7 @@ main {
 .activity h3 {
     font-size: 20px;
     padding-left: 10px;
+    margin-bottom: 0;
 }
 
 .members-container,
@@ -275,6 +298,7 @@ main {
 
 .members-text a {
     color: #7477BF;
+    text-decoration: none;
 }
 
 .members-text p:nth-child(1),
@@ -282,9 +306,9 @@ main {
     margin: 15px 0 0 0;
 }
 
-.members-text .date,
+.members-text,
 .activity-text  p:nth-child(2) {
-    margin: 5px 0 15px 0;
+    margin: 5px 0 0 0;
 }
 
 .members-container:nth-of-type(4),
@@ -292,7 +316,11 @@ main {
     border-bottom: none;
 }
 
-.activity-text  p:nth-child(3) {
+.date {
+  margin: 5px;
+}
+
+.arrow {
     display: none;
 }
 
@@ -301,6 +329,7 @@ main {
 .message {
     margin: auto;
     border-bottom: 1px solid #999999;
+    grid-area: message;
 }
 
 .message h3 {
@@ -316,7 +345,7 @@ main {
 
 .widget-container input,
 .widget-container textarea {
-    width: 90%;
+    width: 97%;
     background: #F7F7F7;
     margin: 0 0 10px 0;
     border: 1px solid #999999;
@@ -334,9 +363,10 @@ main {
 
 .button-message {
     height: 50px;
-    width: 90%;
+    width: 97%;
     background-color: #7477BF;
     color: white;
+    border: none;
     margin-bottom: 10px;
     border-radius: 5px;
     font-size: 15px;
@@ -346,6 +376,7 @@ main {
 .settings {
     margin: auto;
     border-bottom: 1px solid #999999;
+    grid-area: settings;
 }
 
 .settings h3 {
@@ -381,6 +412,7 @@ span {
 
 strong {
   font-size: 18px;
+  flex-basis: 250px;
 }
 
 #timezone {
@@ -405,67 +437,222 @@ strong {
     font-size: 15px;
     border-radius: 5px;
     height: 50px;
-    width: 300px;
+    width: 50%;
 }
 
 #save {
     background-color: #7477BF;
     color: white;
     margin-right: 5px;
+    border: none;
 }
 
 #cancel {
-    background-color: #848484;
+    background: #797979;
     color: white;
     margin-left: 5px;
+    border: none;
 }
 
 /* Media Queries */
 
 @media (min-width: 768px) {
     .grid-container {
-        grid-template-columns: 68px 1fr;
-        grid-template-areas:
-            "header header"
-            "navigation main";  
+      grid-template-columns: 68px 1fr;
+      grid-template-areas:
+        "header header"
+        "navigation main";  
     }
 
-    .main {
-        grid-template-columns: 50% ;
+    main {
+      display: grid;
+      width: 100%;
+      grid-template-areas:
+        "tab tab"
+        "alert alert"
+        "traffic traffic"
+        "daily mobile"
+        "socials socials"
+        "members members"
+        "activity activity"
+        "message message"
+        "settings settings";  
     }
 
-    .traffic, .social {
-        grid-column: 1 / span 2;
-        }
-
-    .daily, .members, .message {
-        grid-column: 1 / span 1;
+    header {
+      width: 100%;
+      grid-template-columns: 68% 8% 8% 1fr;
     }
 
-    .mobile, .activity, .settings {
-        grid-column: 2 / span 1;
+    .bell {
+      padding: 15px 0 0 10px;
     }
+
+    .bell svg {
+      width: 55%;
+    }
+
 
     header h1 {
-        margin-right: 350px;
+      margin-right: 350px;
     }
 
     nav {
         display: flex;
         flex-direction: column;
         justify-content: start;
-        width: 60px;
         padding: 0 10px 0 10px;
     }
 
     nav svg {
         margin-top: 10px;
+        margin-bottom: 15px;
     }
 
+    .social-stats {
+      width: 100%;
+    }
+
+    .social-widgets {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .social-container {
+      width: 33%;
+      margin: 0px 5px 10px 5px;
+    }
+
+    .social-image {
+      margin: auto 15px auto 15px;
+      border-radius: 50px;
+    }
+
+    .social-text p:nth-child(2) {
+      font-size: 40px; 
+    }
+
+    .members,
+    .activity {
+      width: 100%;
+    }
     
+    .members-container {
+      display: grid;
+      grid-template-areas: 
+        "profile text date";
+      grid-template-columns: 70px 1fr 1fr;
+      height: 100px;
+    }
+
+    .profile-image {
+      grid-area: profile;
+    }
+
+    .members-text {
+      grid-area: text;
+      text-align: left;
+    }
+
+    .members-text p:nth-child(1),
+    .activity-text  p:nth-child(1){
+      margin: auto;
+    }
+
+    .date {
+      grid-area: date;
+      text-align: right;
+    }
+
+    .activity-container {
+      display: grid;
+      grid-template-areas: 
+        "profile text arrow";
+      grid-template-columns: 70px 1fr 10px;
+      height: 100px;
+    }
+
+    .activity-text {
+      grid-area: text;
+      text-align: left;
+    }
+
+    .arrow {
+      grid-area: arrow;
+      display: contents;
+      text-align: right;
+    }
+
+    .activity-text  p:nth-child(2) {
+      margin-top: 0;
+    }
+
+    .message {
+      width: 100%;
+    }
+
+    .settings {
+      width: 100%;
+    }
+
+    label.switch-light.switch-ios {
+      justify-content: flex-start;
+    } 
 }
 
-@charset "UTF-8";
+@media (min-width: 1024px) {
+  main {
+    grid-template-areas:
+      "tab tab"
+      "alert alert"
+      "traffic traffic"
+      "daily mobile"
+      "socials socials"
+      "members activity"
+      "message settings";  
+  }
+
+  header {
+    grid-template-columns: 75% 5% 5% 1fr;
+  }
+
+  .bell {
+    padding: 20px 0 0 10px;
+  }
+
+  .members {
+    border-right: 1px solid #999999;
+  }
+
+  .settings {
+    height: 100%;
+  }
+
+  .message {
+    border-right: 1px solid #999999;
+  }
+
+  .widget-container textarea{
+    height: 125px;
+  }
+
+  label.switch-light.switch-ios {
+    margin-bottom: 25px;
+  }
+
+  #timezone {
+    margin-top: 22px;
+}
+
+.settings-button {
+    margin-bottom: 10px;
+}
+
+}
+
+/* @charset "UTF-8"; */
 /*
 * CSS TOGGLE SWITCH
 *
@@ -756,4 +943,4 @@ strong {
     line-height: 2.4em;
     vertical-align: middle; }
 .switch-ios input:checked + label {
-  color: #3e4043; }
+  color: #3e4043; }}
