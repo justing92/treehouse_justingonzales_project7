@@ -121,7 +121,7 @@ main {
     background-color: #7477BF;
     border-radius: 10px;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .alert-text {
@@ -147,7 +147,18 @@ main {
 .traffic-nav {
     display: flex;
     list-style: none;
-    font-size: 15px;
+    justify-content: space-between;
+    font-size: 20px;
+    align-items: center;
+    padding-left: 0;
+    margin: 0 30px 15px 20px;
+}
+
+.traffic-nav-link-active {
+  background: #81C98F;
+  color: white;
+  border-radius: 52px;
+  padding: 8px 10px 8px 10px;
 }
 
 .traffic h3 {
@@ -155,12 +166,9 @@ main {
     padding-left: 10px;
 }
 
-.traffic-nav-link {
-    margin: 10px;
-}
-
-.traffic-img {
-    width: 100%;
+.widget-container-full {
+  width: 95%;
+  margin: 0 auto 20px auto;
 }
 
 /* Daily Traffic */
@@ -195,6 +203,11 @@ main {
 
 .mobile-img {
     width: 100%;
+}
+
+.widget-container-half {
+  width: 95%;
+  margin: 0 auto 20px auto;
 }
 
 /* Socials */
@@ -505,6 +518,37 @@ strong {
         margin-bottom: 15px;
     }
 
+    .traffic,
+    .daily,
+    .mobile {
+      width: 100%;
+    }
+
+    .traffic-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0 10px 0;
+    }
+
+    .traffic h3{
+      margin: 0 0 0 0;
+    }
+
+    .traffic-nav {
+      margin: 0 15px 0 0; 
+    }
+
+    .traffic-nav-link {
+      padding-left: 20px;
+    }
+
+    .daily {
+      padding-bottom: 1px;
+
+    }
+
     .social-stats {
       width: 100%;
     }
@@ -616,6 +660,12 @@ strong {
 
   .bell {
     padding: 20px 0 0 10px;
+  }
+
+  .daily {
+    border-right: 1px solid #999999;
+    padding-bottom: 4px;
+
   }
 
   .members {

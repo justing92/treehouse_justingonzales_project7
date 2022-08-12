@@ -69,9 +69,9 @@
             <div class="traffic-header">
                 <h3>Traffic</h3>
                 <ul class="traffic-nav">
-                    <li class="traffic-nav-link">Hourly</li>
+                    <li class="traffic-nav-link-active">Hourly</li>
                     <li class="traffic-nav-link">Daily</li>
-                    <li class="traffic-nav-link active">Weekly</li>
+                    <li class="traffic-nav-link">Weekly</li>
                     <li class="traffic-nav-link">Monthly</li>
                 </ul>
             </div>
@@ -86,7 +86,6 @@
             <h3>Daily Traffic</h3>
             <div class="widget-container-half">
                 <!-- element bar graph will attach to -->
-                <img src="web_app_dashboard_v3.2/mockups/graph_mockup_2.PNG" class="daily-img">  <!-- TEMPORARY IMG - TAKE OUT -->
                 <canvas id="daily-chart"></canvas>
             </div>
         </section>
@@ -96,7 +95,6 @@
             <h3>Mobile Users</h3>
             <div class="widget-container-half">
                 <!-- element doughnut graph will attach to -->
-                <img src="web_app_dashboard_v3.2/mockups/graph_mockup_3.PNG" class="mobile-img">  <!-- TEMPORARY IMG - TAKE OUT -->
                 <canvas id="mobile-chart"></canvas>
             </div>
         </section>        
@@ -274,7 +272,8 @@
         </section>
 
     </main>
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+
   </body>
 </html>
