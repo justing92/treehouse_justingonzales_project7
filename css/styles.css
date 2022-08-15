@@ -32,17 +32,37 @@ header h1 {
 }
 
 .bell {
-    border-right: 1px solid #999999;
-    grid-area: bell;
-    padding: 20px 0 0 10px;
-    align-items: center;
+  border-right: 1px solid #999999;
+  grid-area: bell;
+  padding: 8px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .bell svg {
-    width: 20px;
-    fill: white;
-    margin: auto;
-  }
+  width: 20px;
+  fill: white;
+  margin: auto 0 auto 10px;
+}
+
+.bell svg:hover {
+  animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+  from {fill: white;}
+  to {fill: #81C98F;}
+}
+
+.notifications {
+  width: 5px;
+  height: 5px;
+  background-color: #81C98F;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: 20px;
+}
 
 header img {
   border-radius: 50%;
@@ -499,7 +519,7 @@ strong {
     }
 
     .bell {
-      padding: 20px 0 0 10px;
+      /* padding: 20px 0 0 10px; */
     }
 
     header h1 {
@@ -522,6 +542,11 @@ strong {
     .daily,
     .mobile {
       width: 100%;
+    }
+
+    .daily {
+      border-right: 1px solid #999999;
+
     }
 
     .traffic-header {
@@ -659,11 +684,10 @@ strong {
   }
 
   .bell {
-    padding: 20px 0 0 10px;
+    /* padding: 20px 0 0 10px; */
   }
 
   .daily {
-    border-right: 1px solid #999999;
     padding-bottom: 4px;
 
   }
